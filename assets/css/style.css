@@ -1,9 +1,19 @@
-/* #59b001 #f0f4f5 #5cab0f */
+/* 
+Green:#59b001 
+Light Blue: #f0f4f5 
+light Green: #5cab0f
+ */
 
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    --primaryGreen: #59b001;
+    --secondaryGreen:#5cab0f;
+    --lightBlue: #f0f4f5 ;
+    --black: #00000000;
+    --white:#fff;
+    
+
 }
 
 html{
@@ -13,88 +23,44 @@ html{
 .container{
     max-width: 1170px;
     margin: 0 auto;
-    padding: 0 16px;
-}
-
-.sec_space{
-    padding: 2rem 0;
-}
-
-.secondary-navbarr-wrap{
-    background-color:  #59b001;
-}
-
-.secondary-navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-}
-
-.secondary-navbar .left-navbarr span{
-    color: white;
-    font-weight: bold;
-}
-
-.secondary-navbar .left-navbarr{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-}
-
-.secondary-navbar .left-navbarr li{
-    padding: 6px;
-
-}
-
-.secondary-navbar .left-navbarr li a{
-    text-decoration: none;
-    color: white;
-    margin: 8px;
     
 }
 
-.secondary-navbar .left-navbarr-icons{
-    display: none;
-    
+.top-socialbar-wrapper{
+    background-color: var(--primaryGreen);
+    padding: 6px 0;
 }
 
-.secondary-navbar .left-navbarr-icons li{
+.topbar-inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-detail{
     list-style-type: none;
-}
-
-.secondary-navbar .left-navbarr-icons a{
-    margin: 0 6px;
-    color: #fff;
-    text-decoration: none;
-    display: none;
-
-}
-
-
-.secondary-navbar .right-navbarr{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    list-style: none;
 }
 
-.secondary-navbar .right-navbarr .first-child{
-    border-right: 2px white solid;
-    padding-right: 16px;
-}
-
-.secondary-navbar .right-navbarr li{
-    padding: 8px;
-}
-
-.secondary-navbar .right-navbarr li a{
+.contact-detail li a{
     text-decoration: none;
-    color: white;
-    font-size: 14px;
-    margin: 4px;
+    color: var(--white);
+    padding: 0 12px;
+    display: inline-block;
 }
+
+.social-icons li:first-child{
+    border-right: 2px solid var(--white);
+}
+
+.contact-detail li > span{
+    font-weight: bold;
+    color: var(--white);
+}
+
+
+
+    
 
 .primary-navbar{
     display: flex;
@@ -128,7 +94,7 @@ html{
 }
 
 .primary-navbar ul li a:hover{
-    color:  #59b001;
+    color: var(--primaryGreen);
     text-decoration: underline;
 }
 
@@ -147,6 +113,7 @@ html{
     position: absolute;
     inset: 0;
     
+    
 }  
 
 
@@ -156,10 +123,11 @@ html{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    
 }
 
 .hero-section  .overlay .overlay-inner h3{
-    color: white;
+    color: var(--white);
     text-transform: uppercase;
     font-size: 20px;
 }
@@ -171,127 +139,82 @@ html{
     margin-top: 12px;
 }
 
-.hero-section .overlay .overlay-inner h1 > span{
-    color:  #59b001;
-    text-transform: uppercase;
-    padding: 6px;
+.highlight{
+   color: var(--primaryGreen);
 }
 
 .hero-section  .overlay .overlay-inner p{
-    color: white;
+    color: var(--white);
     margin-top: 8px;
     font-size: 14px;
     margin-bottom: 16px;
 }
 .hero-section .overlay .overlay-inner a:hover{
-    background-color: #59b001;
+    border: none(transparent #fff);
+    background-color: var(--primaryGreen);
 }
 
 .hero-section  .overlay .overlay-inner a{
     display: inline-block;
     text-decoration: none;
-    color: white;
+    color: var(--white);
     padding: 12px 24px;
     border-radius: 32px;
-    border: white solid 1px;
+    border: var(--white) solid 1px;
     text-transform: uppercase;
     margin-right: 16px;
 }
 
-
-
-
-.find-properties{
-    background-color: #f0f4f5;
-    padding: 48px 0;
-}
-
-
-.find-properties h1{
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 24px;
-    background-color: #59b001;
-    max-width: fit-content;
-    margin: 0 auto;
-    padding: 6px 8px;
-}
-
-
-.form-properties{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 16px;
-}
-
-.form-properties select{
-    width: 23%;
-    border: 1px solid black;
-    padding: 11px;
-    outline: none;
-    margin: 2% 2% 0 0;
-    background-color: #f0f4f5;
-}
-
-.form-properties .range{
-    display: flex;
-    flex-direction: column;
-    margin: auto 2% 0 0;
-}
-
-
-.find-properties .range input{
-    width: 256px;
-    outline: none;
-}
-
-.form-properties .search-btn{
-    padding: 32px 0 0 0;
-    margin: 0 auto;
-}
-
-.form-properties .search-btn button{
-    background-color: #59b001;
-    border: none;
-    padding: 16px 32px;
-    text-transform: uppercase;
-    color: white;
-}
-
-/* // X-Small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) { 
-    
+/* Utility Classes */
+ 
+.pl-0{
+    padding-left: 0!important;
+ }
+ .pr-0{
+    padding-right: 0;
+ }
+ .pb-0{
+    padding-bottom: 0;
+ }
+ .pt-0{
+    padding-top: 0;
+ }
+ .p{
+    padding: 0;
  }
 
-/* // Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) { 
-     .secondary-navbar{
+/* // `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .hero-section  .overlay .overlay-inner{
+        
         display: none;
-     }
-
-     
-.secondary-navbar .left-navbarr-icons{
-    display: flex;
-    
-}
-
  }
 
-/* // Medium devices (tablets, less than 992px) */
+/* // `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+    .topbar-inner{
+        display: block;
+    }
+    .social-icons{
+        margin-top: 12px;
+    }
+    .hero-section  .overlay .overlay-inner{
+        
+        display: none;
+ }
+}
+
+/* // `lg` applies to medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) { 
 
  }
 
-/* // Large devices (desktops, less than 1200px) */
+/* // `xl` applies to large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) { 
 
- }
+}
 
-/* // X-Large devices (large desktops, less than 1400px) */
+/* // `xxl` applies to x-large devices (large desktops, less than 1400px) */
 @media (max-width: 1399.98px) { 
 
- }
-
-/* // XX-Large devices (larger desktops) */
-/* // No media query since the xxl breakpoint has no upper bound on its width */
+}
